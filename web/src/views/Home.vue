@@ -27,44 +27,16 @@
     </div>
     <!-- end of nav icons -->
 
-    <m-card icon="menu" title="新闻资讯">
-      <div class="nav jc-between">
-        <div class="nav-item active">
-          <div class="nav-link">热门</div>
+    <m-list-card icon="menu" title="新闻资讯" :categories="newsCats">
+      <template #items="{category}">
+        <div class="py-2" v-for="(news, i) in category.newsList" :key="i">
+          <span>[{{news.categoryName}}]</span>
+          <span>|</span>
+          <span>{{news.title}}</span>
+          <span>{{news.date}}</span>
         </div>
-        <div class="nav-item">
-          <div class="nav-link">新闻</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">公告</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">活动</div>
-        </div>
-        <div class="nav-item">
-          <div class="nav-link">赛事</div>
-        </div>
-      </div>
-      <div class="pt-3">
-        <swiper>
-          <swiper-slide v-for="n in 5" :key="n">
-            <div class="py-2" v-for="n in 5" :key="n">
-              <span>[活动]</span>
-              <span>|</span>
-              <span>【探秘新版本，巅峰赢豪礼】活动开启公告</span>
-              <span>09/19</span>
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
-    </m-card>
-
-    <m-card title="英雄列表" icon="menu"></m-card>
-    <m-card title="精彩视频" icon="menu"></m-card>
-    <m-card title="图文攻略" icon="menu"></m-card>
-    <m-card title="英雄列表" icon="menu"></m-card>
-    <m-card title="英雄列表" icon="menu"></m-card>
-    <m-card title="英雄列表" icon="menu"></m-card>
+      </template>
+    </m-list-card>
   </div>
 </template>
 
@@ -78,6 +50,48 @@ export default {
           el: ".swiper-pagination",
         },
       },
+      newsCats: [
+        {
+          name: "热门",
+          newsList: new Array(5).fill({}).map((v) => ({
+            categoryName: v + "活动",
+            title: "【探秘新版本，巅峰赢豪礼】活动开启公告",
+            date: "0919",
+          })),
+        },
+        {
+          name: "新闻",
+          newsList: new Array(5).fill({}).map((v) => ({
+            categoryName: v + "新闻",
+            title: "【探秘新版本，巅峰赢豪礼】活动开启公告",
+            date: "0919",
+          })),
+        },
+        {
+          name: "热门",
+          newsList: new Array(5).fill({}).map((v) => ({
+            categoryName: v + "活动",
+            title: "【探秘新版本，巅峰赢豪礼】活动开启公告",
+            date: "0919",
+          })),
+        },
+        {
+          name: "热门",
+          newsList: new Array(5).fill({}).map((v) => ({
+            categoryName: v + "活动",
+            title: "【探秘新版本，巅峰赢豪礼】活动开启公告",
+            date: "0919",
+          })),
+        },
+        {
+          name: "热门",
+          newsList: new Array(5).fill({}).map((v) => ({
+            categoryName: v + "活动",
+            title: "【探秘新版本，巅峰赢豪礼】活动开启公告",
+            date: "0919",
+          })),
+        },
+      ],
     };
   },
   components: {},
