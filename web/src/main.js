@@ -10,6 +10,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper.scss'
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
+import './assets/iconfont/iconfont.css'
+
 new Vue({
   router,
   render: h => h(App)
