@@ -23,6 +23,10 @@ a {
     color: #999999;
 }
 
+p {
+    line-height: 1.5rem;
+}
+
 @each $colorKey, $color in $colors {
     .text-#{$colorKey} {
         color: $color;
@@ -166,4 +170,11 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+// borders
+@each $dir in (top, right, bottom, left) {
+    .border-#{$dir} {
+        border-#{$dir}: 1px solid $border-color;
+    }
 }
